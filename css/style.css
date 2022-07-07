@@ -1,9 +1,5 @@
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+
 :root{
     --bg-grey:#d9dbd3;
     --bg-green:#009688;
@@ -31,7 +27,7 @@ body{
 .container-lg{
     /* margin: 1vh 10vw; */
     background-color: var(--container-bg-grey);
-    height: 95vh;
+    height: 93vh;
 }
 #left-section, #right-section{
    padding: 0;
@@ -91,10 +87,10 @@ body{
     z-index: 1;
 }
 #chat-boxes{    
-    overflow-y: scroll;
-    height: calc(95vh - 60px - 75px - 40px);
+    height: calc(93.5vh - 60px - 75px - 40px);
     background-color: whitesmoke;
-   /*  overflow-x: hidden; */
+    overflow-y: scroll;
+   
 }
 .chat-box{
     background-color: whitesmoke;
@@ -102,7 +98,7 @@ body{
     border-color: var(--container-bg-grey);
     height: 70px;
     font-size: 28px;
-    width: 100%;
+    margin: 0;
 }
 #chat-boxes>.col-2 .col-9{
     padding: 0;
@@ -138,7 +134,7 @@ body{
 #chat{
     background: url('../img/mine.jpg');
     background-repeat: repeat;
-    height: calc(95vh - 60px - 60px);
+    height: calc(93.5vh - 60px - 60px);
 }
 
 .message{
