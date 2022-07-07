@@ -7,8 +7,10 @@
     --bg-green:#009688;
     --container-bg-grey:#eaeaea;
     --notification-skyblue:#8edafc;
+    --light-grey-icons:#b1b1b1;
     --highlighted-bg-grey:#e4dcd4;
     --text-message-green:#d5f9ba;
+    --text-gray:#d5cdca;
     
 }
 body{
@@ -28,16 +30,41 @@ body{
     margin: 1vh 10vw;
     background-color: var(--container-bg-grey);
 }
-
+#left-section{
+   padding: 0;
+}
+.top-section{
+    height: 60px;
+}
 .user-info img{
-    height:50px;
+    height:40px;
     border-radius: 50%;
     margin-right: 0.5rem;
 }
 
-.settings{
-    font-size: 1.5rem;
-}
 .settings i {
     margin: 0.5rem;
+    color: var(--light-grey-icons);
+}
+
+#notification-box{
+    background-color: var(--notification-skyblue);
+    height: 70px;
+}
+.notification-icon{
+    font-size: 1.5rem;
+    color: var(--notification-skyblue);
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+#notification-box h5{
+    margin:0;
+    font-size: 1rem;
+}
+.text-little{
+    font-size: 0.8rem;
 }

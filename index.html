@@ -19,18 +19,33 @@
         <div id="app">
             <div class="container-lg mx-auto">
                 <div class="row">
-                    <div class="col-5">
-                        <div class="user p-2 d-flex flex-row justify-content-between">
+                    <!-- left column -->
+                    <div class="col-5" id="left-section">
+                        <!-- user info -->
+                        <div class="top-section p-2 d-flex flex-row justify-content-between">
                             <div class="user-info d-flex flex-row align-items-center">
                             <img src="./img/avatar_io.jpg" alt="User Picture">
-                            <h3 class="user-name">Sofia</h3>
+                            <h5 class="user-name">Sofia</h5>
                             </div>
                             <div class="settings d-flex flex-row align-items-center">
                                 <i class="bi bi-circle-square"></i>
                                 <i class="bi bi-chat-left-fill"></i>
                                 <i class="bi bi-three-dots-vertical"></i>
                             </div>
-
+                        </div>
+                        <!-- notification box -->
+                        <div id="notification-box" class="p-2 d-flex flex-row align-items-center">
+                            <div class="notification-icon ">
+                                <i class="bi bi-bell-slash-fill"></i>
+                            </div>
+                            <div class="notification-info ms-2">
+                                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                <span class="text-decoration-underline text-little">Attiva notifiche desktop</span>
+                            </div>
+                        </div>
+                        <!-- Search Box -->
+                        <div>
+                            
                         </div>
                     </div>
                     <div class="col-7">
