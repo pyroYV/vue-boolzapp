@@ -29,12 +29,14 @@ body{
 }
 
 .container-lg{
-    margin: 1vh 10vw;
+    /* margin: 1vh 10vw; */
     background-color: var(--container-bg-grey);
+    height: 95vh;
 }
-#left-section{
+#left-section, #right-section{
    padding: 0;
 }
+
 .top-section{
     height: 60px;
 }
@@ -78,6 +80,9 @@ body{
     background-color: white;
     border: none;
 }
+#search-bar {
+    height: 40px;
+}
 #search-bar .bi-search{
     position: absolute;
     display: inline-block;
@@ -85,9 +90,9 @@ body{
     left: 20px;
     z-index: 1;
 }
-#chat-boxes{
+#chat-boxes{    
     overflow-y: scroll;
-    height: 80vh;
+    height: calc(95vh - 60px - 75px - 40px);
     background-color: whitesmoke;
    /*  overflow-x: hidden; */
 }
@@ -128,4 +133,21 @@ body{
 .contact-time{
     font-size: 0.5rem;
     height: 50px;
+}
+
+#chat{
+    background: url('../img/mine.jpg');
+    background-repeat: repeat;
+    height: calc(95vh - 60px - 60px);
+}
+
+.message{
+   background-color: whitesmoke;
+   width: 40%;
+}
+
+.received{
+    align-self: end;
+    background-color: var(--text-message-green);
+    text-align: end;
 }
