@@ -1,0 +1,43 @@
+/* 
+*{
+    outline: rgb(137, 94, 94) solid;
+} */
+:root{
+    --bg-grey:#d9dbd3;
+    --bg-green:#009688;
+    --container-bg-grey:#eaeaea;
+    --notification-skyblue:#8edafc;
+    --highlighted-bg-grey:#e4dcd4;
+    --text-message-green:#d5f9ba;
+    
+}
+body{
+    background-color: var(--bg-grey);
+}
+
+#bg-color{
+    position:absolute;
+    top:0%;
+    left:0;
+    right:0;
+    background-color: var(--bg-green);
+    height: 140px;
+}
+
+.container-lg{
+    margin: 1vh 10vw;
+    background-color: var(--container-bg-grey);
+}
+
+.user-info img{
+    height:50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.settings{
+    font-size: 1.5rem;
+}
+.settings i {
+    margin: 0.5rem;
+}
