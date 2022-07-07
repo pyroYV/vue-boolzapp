@@ -166,13 +166,17 @@ const app = new Vue ({
                 ],
             }
         ],
-        activeChatIndex:0,
-        
+        activeChatIndex:null,
+
         
     },
     methods: {
         addPicture(index){
             return'./img/avatar'+ this.contacts[index].avatar + '.jpg'
+        },
+        changeChatIndex(index){
+            console.log(this.activeChatIndex)
+            this.activeChatIndex = index
         }
     },
 })

@@ -93,7 +93,9 @@ body{
     height: 70px;
     font-size: 28px;
     width: 100%;
-    
+}
+.active-chat{
+    background-color: var(--highlighted-bg-grey);
 }
 
 .contact-picture img{

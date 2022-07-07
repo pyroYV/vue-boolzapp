@@ -53,7 +53,9 @@
 
                         <!-- Chat boxes -->
                         <div id="chat-boxes">
-                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between">
+                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
+                            :class="{'active-chat': activeChatIndex === index}"
+                            @click=changeChatIndex(index)>
                                 <div class="col-1">
                                     <div class="contact-picture">
                                         <img :src="addPicture(index)" alt="">
