@@ -68,3 +68,50 @@ body{
 .text-little{
     font-size: 0.8rem;
 }
+
+#addon-wrapping{
+    background-color: white;
+    border: none;
+}
+#search-bar .bi-search{
+    position: absolute;
+    display: inline-block;
+    top: 10px;
+    left: 20px;
+    z-index: 1;
+}
+#chat-boxes{
+    overflow-y: scroll;
+    height: 80vh;
+    background-color: whitesmoke;
+}
+.chat-box{
+    background-color: whitesmoke;
+    border-top:solid;
+    border-color: var(--container-bg-grey);
+    height: 70px;
+    font-size: 28px;
+}
+
+.contact-picture img{
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+
+}
+
+.contact-info>h5{
+    font-size: 1rem;
+    margin: 0;
+}
+.contact-info{
+    height: 50px;
+    
+}
+.contact-info > .last-message-sent{
+    font-size: 0.8rem;
+}
+.contact-time{
+    font-size: 0.5rem;
+    height: 50px;
+}

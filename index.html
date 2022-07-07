@@ -44,8 +44,29 @@
                             </div>
                         </div>
                         <!-- Search Box -->
-                        <div>
-                            
+                        <div class="p-1  position-relative" id="search-bar">
+                            <i class="bi bi-search"></i>
+                            <div class="input-group flex-nowrap ">
+                                <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                              </div>
+                        </div>
+
+                        <!-- Chat boxes -->
+                        <div id="chat-boxes">
+                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-around">
+                                <div class="col-1">
+                                    <div class="contact-picture">
+                                        <img src="./img/avatar_1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="contact-info col-9 d-flex align-items-start flex-column ">
+                                    <h5>{{contacts[index].name}}</h5>
+                                    <span class="last-message-sent">Ultimo messaggio inviato</span>
+                                </div>
+                                <div class="contact-time col-1 d-flex flex-column justify-content-start align-items-start">
+                                    <span>12:00</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-7">
