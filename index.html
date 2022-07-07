@@ -53,10 +53,10 @@
 
                         <!-- Chat boxes -->
                         <div id="chat-boxes">
-                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-around">
+                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between">
                                 <div class="col-1">
                                     <div class="contact-picture">
-                                        <img src="./img/avatar_1.jpg" alt="">
+                                        <img :src="addPicture(index)" alt="">
                                     </div>
                                 </div>
                                 <div class="contact-info col-9 d-flex align-items-start flex-column ">

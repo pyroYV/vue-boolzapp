@@ -84,6 +84,7 @@ body{
     overflow-y: scroll;
     height: 80vh;
     background-color: whitesmoke;
+   /*  overflow-x: hidden; */
 }
 .chat-box{
     background-color: whitesmoke;
@@ -91,6 +92,8 @@ body{
     border-color: var(--container-bg-grey);
     height: 70px;
     font-size: 28px;
+    width: 100%;
+    
 }
 
 .contact-picture img{

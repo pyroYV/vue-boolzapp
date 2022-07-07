@@ -166,6 +166,13 @@ const app = new Vue ({
                 ],
             }
         ],
+        activeChatIndex:0,
         
-    }
+        
+    },
+    methods: {
+        addPicture(index){
+            return'./img/avatar'+ this.contacts[index].avatar + '.jpg'
+        }
+    },
 })
