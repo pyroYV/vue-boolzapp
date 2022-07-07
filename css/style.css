@@ -140,10 +140,12 @@ body{
 .message{
    background-color: whitesmoke;
    width: 40%;
+   margin-bottom: 20px;
 }
 
-.received{
+.sent{
     align-self: end;
     background-color: var(--text-message-green);
     text-align: end;
+    
 }

@@ -104,16 +104,16 @@
                         </div>
                        </div>
                        <!-- main chat -->
-                       <div id="chat" class="p-5 d-flex flex-column align-content-start">
-                            <div class="message p-2 rounded-2">
+                       <div id="chat" class="p-5 d-flex flex-column align-content-start ">
+                            <div v-for="(item, index) in contacts[activeChatIndex].messages" :key="index" class="message p-2 rounded-2" :class="{'sent': contacts[activeChatIndex].messages[index].status == 'sent' }">
                                 <div class="message-content">
-                                    Tutto fatto
+                                    {{contacts[activeChatIndex].messages[index].message}}
                                 </div>
                             </div>
-                            <div class="message received p-2 rounded-2">
+<!--                             <div class="message received p-2 rounded-2">
                                 <div class="message-content">
                                     Tutto fatto
-                                </div>
+                                </div> -->
                             </div>
                        </div>
                     </div>
