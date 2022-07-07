@@ -1,7 +1,9 @@
-/* 
+
 *{
-    outline: rgb(137, 94, 94) solid;
-} */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 :root{
     --bg-grey:#d9dbd3;
     --bg-green:#009688;
@@ -41,7 +43,10 @@ body{
     border-radius: 50%;
     margin-right: 0.5rem;
 }
-
+#left-section .top-section{
+    border-right: solid 1px lightgray;
+    /* border-color: var(--container-bg-grey); */
+}
 .settings i {
     margin: 0.5rem;
     color: var(--light-grey-icons);
@@ -94,6 +99,9 @@ body{
     font-size: 28px;
     width: 100%;
 }
+#chat-boxes>.col-2 .col-9{
+    padding: 0;
+}
 .active-chat{
     background-color: var(--highlighted-bg-grey);
 }
@@ -111,7 +119,8 @@ body{
 }
 .contact-info{
     height: 50px;
-    
+    flex-grow: 1;
+    padding: 0;
 }
 .contact-info > .last-message-sent{
     font-size: 0.8rem;

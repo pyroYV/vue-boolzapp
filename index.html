@@ -56,7 +56,7 @@
                             <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
                             :class="{'active-chat': activeChatIndex === index}"
                             @click=changeChatIndex(index)>
-                                <div class="col-1">
+                                <div class="col-2">
                                     <div class="contact-picture">
                                         <img :src="addPicture(index)" alt="">
                                     </div>
@@ -71,8 +71,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-7">
-                       
+                    <!-- right section -->
+                    <div class="col-7" id="right-section">
+                        <!-- Active chat top section -->
+                       <div class="top-section p-2 d-flex flex-row justify-content-between">
+                        <div class="col-1">
+                            <div class="contact-picture">
+                                <img :src=addPicture(activeChatIndex) alt="">
+                            </div>
+                        </div>
+                        <div class="contact-info col-8 d-flex align-items-start flex-column">
+                            <h5>{{contacts[activeChatIndex].name}}</h5>
+                            <span class="last-message-sent">Ultimo messaggio inviato</span>
+                        </div>
+                        <div class="settings col-2 d-flex justify-content-end align-items-center">
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-paperclip"></i>
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </div>
+                       </div>
                     </div>
                 </div>
             </div>
