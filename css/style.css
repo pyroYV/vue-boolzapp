@@ -135,6 +135,7 @@ body{
     background: url('../img/mine.jpg');
     background-repeat: repeat;
     height: calc(93.5vh - 60px - 60px);
+    overflow-y: scroll;
 }
 
 .message{
@@ -148,4 +149,14 @@ body{
     background-color: var(--text-message-green);
     text-align: end;
     
+}
+
+#user-input-box{
+    height: 60px;
+    width: 100%;
+
+}
+
+#user-input-box i {
+    font-size: 1.5rem;
 }

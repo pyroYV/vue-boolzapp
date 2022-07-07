@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- import bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- import bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <!-- import vue -->
@@ -14,6 +16,7 @@
     <script src="./js/script.js" defer></script>
     <title>Boolzapp</title>
 </head>
+
 <body>
     <div id="bg-color">
         <div id="app">
@@ -24,8 +27,8 @@
                         <!-- user info -->
                         <div class="top-section p-2 d-flex flex-row justify-content-between">
                             <div class="user-info d-flex flex-row align-items-center">
-                            <img src="./img/avatar_io.jpg" alt="User Picture">
-                            <h5 class="user-name">Sofia</h5>
+                                <img src="./img/avatar_io.jpg" alt="User Picture">
+                                <h5 class="user-name">Sofia</h5>
                             </div>
                             <div class="settings d-flex flex-row align-items-center">
                                 <i class="bi bi-circle-square"></i>
@@ -47,28 +50,16 @@
                         <div class="p-1  position-relative" id="search-bar">
                             <i class="bi bi-search"></i>
                             <div class="input-group flex-nowrap ">
-                                <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
-                              </div>
+                                <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat"
+                                    aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
                         </div>
 
                         <!-- Chat boxes -->
                         <div id="chat-boxes">
-<!--                                 <div v-for="(item, index) in contacts" :key="index" class="col-12">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <div class="contact-picture">
-                                                <img :src="addPicture(index)" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-10">
-                                            <h5>{{contacts[index].name}}</h5>
-                                            <span class="last-message-sent">Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            <div v-for="(item, index) in contacts" :key="index" class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
-                            :class="{'active-chat': activeChatIndex === index}"
-                            @click=changeChatIndex(index)>
+                            <div v-for="(item, index) in contacts" :key="index"
+                                class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
+                                :class="{'active-chat': activeChatIndex === index}" @click=changeChatIndex(index)>
                                 <div class="col-2">
                                     <div class="contact-picture">
                                         <img :src="addPicture(index)" alt="">
@@ -78,7 +69,8 @@
                                     <h5>{{contacts[index].name}}</h5>
                                     <span class="last-message-sent">Ultimo messaggio inviato</span>
                                 </div>
-                                <div class="contact-time col-1 d-flex flex-column justify-content-start align-items-start">
+                                <div
+                                    class="contact-time col-1 d-flex flex-column justify-content-start align-items-start">
                                     <span>12:00</span>
                                 </div>
                             </div>
@@ -87,39 +79,49 @@
                     <!-- right section -->
                     <div class="col-7" id="right-section">
                         <!-- Active chat top section -->
-                       <div class="top-section p-2 d-flex flex-row justify-content-between">
-                        <div class="col-1">
-                            <div class="contact-picture">
-                                <img :src=addPicture(activeChatIndex) alt="">
+                        <div class="top-section p-2 d-flex flex-row justify-content-between">
+                            <div class="col-1">
+                                <div class="contact-picture">
+                                    <img :src=addPicture(activeChatIndex) alt="">
+                                </div>
+                            </div>
+                            <div class="contact-info col-8 d-flex align-items-start flex-column">
+                                <h5>{{contacts[activeChatIndex].name}}</h5>
+                                <span class="last-message-sent">Ultimo messaggio inviato</span>
+                            </div>
+                            <div class="settings col-2 d-flex justify-content-end align-items-center">
+                                <i class="bi bi-search"></i>
+                                <i class="bi bi-paperclip"></i>
+                                <i class="bi bi-three-dots-vertical"></i>
                             </div>
                         </div>
-                        <div class="contact-info col-8 d-flex align-items-start flex-column">
-                            <h5>{{contacts[activeChatIndex].name}}</h5>
-                            <span class="last-message-sent">Ultimo messaggio inviato</span>
-                        </div>
-                        <div class="settings col-2 d-flex justify-content-end align-items-center">
-                            <i class="bi bi-search"></i>
-                            <i class="bi bi-paperclip"></i>
-                            <i class="bi bi-three-dots-vertical"></i>
-                        </div>
-                       </div>
-                       <!-- main chat -->
-                       <div id="chat" class="p-5 d-flex flex-column align-content-start ">
-                            <div v-for="(item, index) in contacts[activeChatIndex].messages" :key="index" class="message p-2 rounded-2" :class="{'sent': contacts[activeChatIndex].messages[index].status == 'sent' }">
+                        <!-- main chat -->
+                        <div id="chat" class="p-5 d-flex flex-column align-content-start ">
+                            <div v-for="(item, index) in contacts[activeChatIndex].messages" :key="index"
+                                class="message p-2 rounded-2"
+                                :class="{'sent': contacts[activeChatIndex].messages[index].status == 'sent' }">
                                 <div class="message-content">
                                     {{contacts[activeChatIndex].messages[index].message}}
                                 </div>
                             </div>
-<!--                             <div class="message received p-2 rounded-2">
-                                <div class="message-content">
-                                    Tutto fatto
-                                </div> -->
+                        </div>
+                        <div class="row" id="user-input-box">
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <i class="bi bi-emoji-sunglasses"></i>
                             </div>
-                       </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newChatMessage" @keyup.enter='addNewChatMessage(newChatMessage)' class="form-control">
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <i class="bi bi-mic"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </body>
+
 </html>

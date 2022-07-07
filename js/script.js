@@ -167,6 +167,8 @@ const app = new Vue ({
             }
         ],
         activeChatIndex:0,
+        newChatMessage: '',
+
 
         
     },
@@ -177,6 +179,10 @@ const app = new Vue ({
         changeChatIndex(index){
             console.log(this.activeChatIndex)
             this.activeChatIndex = index
+        },
+        addNewChatMessage(inputMessage){
+            this.contacts[this.activeChatIndex].messages.push({date:'',message:inputMessage,status: 'sent'})
+            this.newChatMessage = ''
         }
     },
 })
