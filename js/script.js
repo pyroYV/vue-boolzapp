@@ -188,5 +188,9 @@ const app = new Vue ({
            let dateString = this.contacts[this.activeChatIndex].messages[index].date
            return dateString = dateString.substring(dateString.indexOf(' '), )
         },
+        getLastMessage(activeChatIndex){
+            let x this.contacts[this.activeChatIndex].messages.pop()
+            return x
+        },
     },
 })
