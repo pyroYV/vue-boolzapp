@@ -181,7 +181,7 @@ const app = new Vue ({
             this.activeChatIndex = index
         },
         addNewChatMessage(inputMessage){
-            this.contacts[this.activeChatIndex].messages.push({date:'',message:inputMessage,status: 'sent'})
+            this.contacts[this.activeChatIndex].messages.push({date: this.getTimeOfUser(),message:inputMessage,status: 'sent'})
             this.newChatMessage = ''
         },
         getTime(index){
@@ -197,6 +197,11 @@ const app = new Vue ({
         },
         trythis(prova){
             console.log(prova)
+        },
+        getTimeOfUser(){
+            const date = new Date();
+            let now = date.getHours() + ':' + date.getMinutes();
+            return now
         }
     },
 })
