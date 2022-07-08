@@ -104,7 +104,7 @@
                                     {{contacts[activeChatIndex].messages[index].message}}
                                 </div>
                                 <div class="chat-message-time position-absolute">
-                                    {{getDate(index)}}
+                                    {{getTime(index)}}
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                                 <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newChatMessage" @keyup.enter='addNewChatMessage(newChatMessage)' class="form-control">
                             </div>
                             <div class="col-1 d-flex justify-content-center align-items-center">
-                                <i class="bi bi-mic" @click="getTime(0)"></i>
+                                <i class="bi bi-mic" @click="getTime()"></i>
                             </div>
                         </div>
                     </div>
