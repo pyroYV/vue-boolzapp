@@ -121,10 +121,10 @@ body{
 .contact-info{
     height: 50px;
     flex-grow: 1;
-    padding: 0;
+    padding: 0 5px;
 }
 .contact-info > .last-message-sent{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 .contact-time{
     font-size: 0.5rem;

@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="contact-info col-9 d-flex align-items-start flex-column ">
                                     <h5>{{contacts[index].name}}</h5>
-                                    <span class="last-message-sent">Ultimo messaggio inviato {{debug(getLastMessage())}}</span>
+                                    <span class="last-message-sent">Ultimo messaggio inviato {{getLastMessage(activeChatIndex)}}</span>
                                 </div>
                                 <div
                                     class="contact-time col-1 d-flex flex-column justify-content-start align-items-start">
@@ -87,7 +87,7 @@
                             </div>
                             <div class="contact-info col-8 d-flex align-items-start flex-column">
                                 <h5>{{contacts[activeChatIndex].name}}</h5>
-                                <span class="last-message-sent">Ultimo messaggio inviato</span>
+                                <span class="last-message-sent">Ultimo messaggio inviato {{getLastMessage(activeChatIndex)}}</span>
                             </div>
                             <div class="settings col-2 d-flex justify-content-end align-items-center">
                                 <i class="bi bi-search"></i>
@@ -117,7 +117,7 @@
                                 <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newChatMessage" @keyup.enter='addNewChatMessage(newChatMessage)' class="form-control">
                             </div>
                             <div class="col-1 d-flex justify-content-center align-items-center">
-                                <i class="bi bi-mic" @click="getTime()"></i>
+                                <i class="bi bi-mic" @click="getLastMessage(activeChatIndex)"></i>
                             </div>
                         </div>
                     </div>
