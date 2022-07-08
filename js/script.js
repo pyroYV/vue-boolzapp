@@ -187,7 +187,6 @@ const app = new Vue ({
         getTime(index){
            let dateString = this.contacts[this.activeChatIndex].messages[index].date
            let fulldate = dateString = dateString.substring(dateString.indexOf(' '), )
-
            return fulldate.slice(0,6)
         },
         getLastMessage(activeChatIndex){
@@ -204,6 +203,14 @@ const app = new Vue ({
             const date = new Date();
             let now = date.getHours() + ':' + date.getMinutes();
             return now
-        }
-    },
+        },
+        messageAnswer(){
+            setTimeout (() =>{
+                this.contacts[this.activeChatIndex].messages.push({date: this.getTimeOfUser(),message:"ok",status: 'received'})
+                this.newChatMessage = ''
+
+            },1000)
+        },
+ 
+    }
 })
