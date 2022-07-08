@@ -144,11 +144,15 @@ body{
    margin-bottom: 20px;
 }
 
+.message .chat-message-time{
+    right: 5%;
+    bottom: 5%;
+    font-size: .5rem;
+}
+
 .sent{
     align-self: end;
-    background-color: var(--text-message-green);
-    text-align: end;
-    
+    background-color: var(--text-message-green);    
 }
 
 #user-input-box{
@@ -160,3 +164,4 @@ body{
 #user-input-box i {
     font-size: 1.5rem;
 }
+

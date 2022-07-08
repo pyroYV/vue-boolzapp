@@ -183,6 +183,11 @@ const app = new Vue ({
         addNewChatMessage(inputMessage){
             this.contacts[this.activeChatIndex].messages.push({date:'',message:inputMessage,status: 'sent'})
             this.newChatMessage = ''
+        },
+        getDate(index){
+           let dateString = this.contacts[this.activeChatIndex].messages[index].date
+           console.log(dateString)
+           return dateString
         }
     },
 })

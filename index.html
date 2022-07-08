@@ -98,13 +98,17 @@
                         <!-- main chat -->
                         <div id="chat" class="p-5 d-flex flex-column align-content-start ">
                             <div v-for="(item, index) in contacts[activeChatIndex].messages" :key="index"
-                                class="message p-2 rounded-2"
+                                class="message p-2 pb-3 rounded-2 position-relative"
                                 :class="{'sent': contacts[activeChatIndex].messages[index].status == 'sent' }">
                                 <div class="message-content">
                                     {{contacts[activeChatIndex].messages[index].message}}
                                 </div>
+                                <div class="chat-message-time position-absolute">
+                                    {{getDate(index)}}
+                                </div>
                             </div>
                         </div>
+                        <!-- user input section -->
                         <div class="row" id="user-input-box">
                             <div class="col-2 d-flex justify-content-center align-items-center">
                                 <i class="bi bi-emoji-sunglasses"></i>
@@ -113,7 +117,7 @@
                                 <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newChatMessage" @keyup.enter='addNewChatMessage(newChatMessage)' class="form-control">
                             </div>
                             <div class="col-1 d-flex justify-content-center align-items-center">
-                                <i class="bi bi-mic"></i>
+                                <i class="bi bi-mic" @click="getTime(0)"></i>
                             </div>
                         </div>
                     </div>
