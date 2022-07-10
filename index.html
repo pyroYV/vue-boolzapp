@@ -51,7 +51,7 @@
                             <i class="bi bi-search"></i>
                             <div class="input-group flex-nowrap ">
                                 <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="addon-wrapping">
+                                    aria-label="Username" aria-describedby="addon-wrapping" v-model="searchForThis" @click.enter="search()">
                             </div>
                         </div>
 

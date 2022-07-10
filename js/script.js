@@ -168,6 +168,7 @@ const app = new Vue ({
         ],
         activeChatIndex:0,
         newChatMessage: '',
+        searchForThis:'',
 
 
         
@@ -211,6 +212,30 @@ const app = new Vue ({
 
             },1000)
         },
+        search(){
+            for (let index = 0; index < this.contacts.length; index++) {
+                const element = this.contacts[index].name.toLowerCase();
+
+                if (this.searchForThis != " "){
+                    if (!this.searchForThis.toLowerCase().includes(element)) {
+                            this.contacts[index].visible = false;
+                            console.log(this.contacts[index].visible)
+                        }else {
+                            this.contacts[index].visible = true; 
+                            console.log(this.contacts[index].visible)
+                            }
+                        }
+                    }
+                },
  
     }
 })
+// integrare la funzione di ricerca
+// ad ogni key up, prendo la stringa nel valore input, la controllo con contains all'array di nomi e imposto ai non presenti "visible : false" classe legata al css display none (???) o vue? vue if e vue else?
+
+// modificare html e css per inserire menu a tendina nei messaggi, info (che ancora non ho capito quali) e rimozione dell'elemento
+
+/// integrazioni bonus, array di risposte casuali invece del solito ok
+// funzione che crea un numero casuale, prende da un array quell'indice e lo usa come risposta
+
+// bonus, array di emoji, ad ogni ricarica della pagina l'icona delle emoji cambia in un emoji diversa
