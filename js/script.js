@@ -190,8 +190,8 @@ const app = new Vue ({
            let fulldate = dateString = dateString.substring(dateString.indexOf(' '), )
            return fulldate.slice(0,6)
         },
-        getLastMessage(activeChatIndex){
-            let messagesList = this.contacts[activeChatIndex].messages;
+        getLastMessage(index){
+            let messagesList = this.contacts[index].messages;
 
             return messagesList[messagesList.length - 1].date;
         },
