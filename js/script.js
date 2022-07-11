@@ -178,7 +178,7 @@ const app = new Vue ({
             return './img/avatar'+ this.contacts[index].avatar + '.jpg'
         },
         changeChatIndex(index){
-            console.log(this.activeChatIndex)
+          /*   console.log(this.activeChatIndex) */
             this.activeChatIndex = index
         },
         addNewChatMessage(inputMessage){
@@ -191,9 +191,7 @@ const app = new Vue ({
            return fulldate.slice(0,6)
         },
         getLastMessage(activeChatIndex){
-            console.log(activeChatIndex)
-            let messagesList = this.contacts[this.activeChatIndex].messages;
-            console.log(messagesList[messagesList.length - 1].date)
+            let messagesList = this.contacts[activeChatIndex].messages;
 
             return messagesList[messagesList.length - 1].date;
         },
@@ -213,20 +211,25 @@ const app = new Vue ({
             },1000)
         },
         search(){
+          /*   if (this.searchForThis == "") return */
+           
             for (let index = 0; index < this.contacts.length; index++) {
+                
                 const element = this.contacts[index].name.toLowerCase();
+                console.log({element,searchForThis:this.searchForThis})
 
-                if (this.searchForThis != " "){
-                    if (!this.searchForThis.toLowerCase().includes(element)) {
-                            this.contacts[index].visible = false;
-                            console.log(this.contacts[index].visible)
-                        }else {
-                            this.contacts[index].visible = true; 
-                            console.log(this.contacts[index].visible)
-                            }
+                if (!element.includes(this.searchForThis.toLowerCase())) {
+
+                        this.contacts[index].visible = false;
+                        console.log(this.contacts[index].visible)
+                    }else {
+                        this.contacts[index].visible = true; 
+                        console.log(this.contacts[index].visible)
+
                         }
-                    }
-                },
+                    
+                }
+            },
  
     }
 })

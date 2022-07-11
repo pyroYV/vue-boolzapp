@@ -51,7 +51,7 @@
                             <i class="bi bi-search"></i>
                             <div class="input-group flex-nowrap ">
                                 <input type="text" class="form-control px-5" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="addon-wrapping" v-model="searchForThis" @click.enter="search()">
+                                    aria-label="Username" aria-describedby="addon-wrapping" v-model="searchForThis" @input="search()">
                             </div>
                         </div>
 
@@ -59,7 +59,7 @@
                         <div id="chat-boxes">
                             <div v-for="(item, index) in contacts" :key="index"
                                 class="chat-box p-2 row flex-row align-items-center align-content-center justify-content-between"
-                                :class="{'active-chat': activeChatIndex === index}" @click=changeChatIndex(index)>
+                                :class="{'active-chat': activeChatIndex === index}" @click=changeChatIndex(index) v-if="item.visible">
                                 <div class="col-2">
                                     <div class="contact-picture">
                                         <img :src="addPicture(index)" alt="">
