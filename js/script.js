@@ -240,6 +240,16 @@ const app = new Vue ({
             this.chatOptions = index;
            }
         },
+        deleteMex(index){
+            console.log(this.chatOptions)
+            if(this.contacts[this.activeChatIndex].messages == 1){
+                this.contacts[this.activeChatIndex].messages.push({date:"1",message:"1",status:"1"})
+            } else{
+                this.contacts[this.activeChatIndex].messages.splice(this.chatOptions, 1)
+                this.chatOptions = null;
+
+            }
+        }
         
  
     }

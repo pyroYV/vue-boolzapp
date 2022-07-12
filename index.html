@@ -109,12 +109,12 @@
                                 <div class="position-absolute chat-bubble-arrow" @click="changeChatOption(index)">
                                     <i class="bi bi-caret-down"></i>
                                 </div>
-                                <div class="position-absolute chat-bubble-options" v-if="chatOptions === index">
+                                <div class="position-absolute chat-bubble-options rounded" v-if="chatOptions === index">
                                     <ul>
                                         <li>
                                             Info messaggi
                                         </li>
-                                        <li>
+                                        <li @click="deleteMex(index)">
                                             Elimina Messaggio
                                         </li>
                                     </ul>
