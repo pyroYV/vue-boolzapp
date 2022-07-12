@@ -106,6 +106,19 @@
                                 <div class="chat-message-time position-absolute">
                                     {{getTime(index)}}
                                 </div>
+                                <div class="position-absolute chat-bubble-arrow">
+                                    <i class="bi bi-caret-down"></i>
+                                </div>
+                                <div class="position-absolute chat-bubble-options" v-if="chatOptions">
+                                    <ul>
+                                        <li>
+                                            Info messaggi
+                                        </li>
+                                        <li>
+                                            Elimina Messaggio
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <!-- user input section -->

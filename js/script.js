@@ -169,6 +169,8 @@ const app = new Vue ({
         activeChatIndex:0,
         newChatMessage: '',
         searchForThis:'',
+        chatOptions:true,
+
 
 
         

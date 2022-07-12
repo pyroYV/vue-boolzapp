@@ -146,7 +146,7 @@ body{
 
 .message .chat-message-time{
     right: 5%;
-    bottom: 5%;
+    right: 5%;
     font-size: .5rem;
 }
 
@@ -165,3 +165,26 @@ body{
     font-size: 1.5rem;
 }
 
+.chat-bubble-arrow{
+    right: 5%;
+    top: 5%;
+}
+.chat-bubble-options ul{
+    padding: 0;
+}
+.chat-bubble-options li{
+    list-style: none;
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+}
+.chat-bubble-options li:hover{
+    background-color: #bebdbd;
+}
+
+.chat-bubble-options{
+    text-align: right;
+    background-color: var(--container-bg-grey);
+    right: 5%;
+    padding: 0 0.5rem;
+    vertical-align: middle;
+}
