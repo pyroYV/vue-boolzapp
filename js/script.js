@@ -184,8 +184,11 @@ const app = new Vue ({
             this.activeChatIndex = index
         },
         addNewChatMessage(inputMessage){
+            if (inputMessage == '') return
+
             this.contacts[this.activeChatIndex].messages.push({date: this.getTimeOfUser(),message:inputMessage,status: 'sent'})
             this.newChatMessage = ''
+            this.messageAnswer()
         },
         getTime(index){
            let dateString = this.contacts[this.activeChatIndex].messages[index].date
@@ -219,18 +222,8 @@ const app = new Vue ({
                 
                 const element = this.contacts[index].name.toLowerCase();
                 console.log({element,searchForThis:this.searchForThis})
-
-                if (!element.includes(this.searchForThis.toLowerCase())) {
-
-                        this.contacts[index].visible = false;
-                        console.log(this.contacts[index].visible)
-                    }else {
-                        this.contacts[index].visible = true; 
-                        console.log(this.contacts[index].visible)
-
-                        }
-                    
-                }
+                this.contacts[index].visible = element.includes(this.searchForThis.toLowerCase())                    
+            }
         },
         changeChatOption(index){
             console.log({index, chatOptions:this.chatOptions})
@@ -249,9 +242,7 @@ const app = new Vue ({
                 this.chatOptions = null;
 
             }
-        }
-        
- 
+        } 
     }
 })
 
