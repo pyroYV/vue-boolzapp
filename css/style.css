@@ -142,6 +142,7 @@ body{
    background-color: whitesmoke;
    width: 40%;
    margin-bottom: 20px;
+
 }
 
 .message .chat-message-time{
@@ -187,4 +188,5 @@ body{
     right: 5%;
     padding: 0 0.5rem;
     vertical-align: middle;
+    z-index: 3;
 }

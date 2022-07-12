@@ -98,7 +98,7 @@
                         <!-- main chat -->
                         <div id="chat" class="p-5 d-flex flex-column align-content-start ">
                             <div v-for="(item, index) in contacts[activeChatIndex].messages" :key="index"
-                                class="message p-2 pb-3 rounded-2 position-relative"
+                                class="message  p-2 pe-5 pb-3 rounded-2 position-relative"
                                 :class="{'sent': contacts[activeChatIndex].messages[index].status == 'sent' }">
                                 <div class="message-content">
                                     {{contacts[activeChatIndex].messages[index].message}}
@@ -106,10 +106,10 @@
                                 <div class="chat-message-time position-absolute">
                                     {{getTime(index)}}
                                 </div>
-                                <div class="position-absolute chat-bubble-arrow">
+                                <div class="position-absolute chat-bubble-arrow" @click="changeChatOption(index)">
                                     <i class="bi bi-caret-down"></i>
                                 </div>
-                                <div class="position-absolute chat-bubble-options" v-if="chatOptions">
+                                <div class="position-absolute chat-bubble-options" v-if="chatOptions === index">
                                     <ul>
                                         <li>
                                             Info messaggi
